@@ -1,3 +1,5 @@
+import { renderer, scene, camera } from "./scripts.js";
+
 class Webcam {
   constructor(
     webcamElement,
@@ -280,3 +282,4 @@ class Webcam {
     }
   }
 }
+export default Webcam;

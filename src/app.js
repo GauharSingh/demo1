@@ -1,9 +1,9 @@
+import Webcam from "./webcam-easy.js";
+import $ from "jquery";
+import "./scripts";
+
 const webcamElement = document.getElementById("webcam");
 const canvasElement = document.getElementById("canvas");
-//const canvasElement2 = document.querySelector("a-scene").canvas;
-
-//document.querySelector("a-scene").canvas.getContext("webgl");
-//document.getElementById("canvas").getContext("2d");
 
 const snapSoundElement = document.getElementById("snapSound");
 
