@@ -1,0 +1,19 @@
+{
+  "name": "webcam-js-demo-app",
+  "version": "1.0.0",
+  "main": "js/app.js",
+  "scripts": {
+    "start": "webpack-dev-server --open",
+    "build": "webpack --mode production --open"
+  },
+  "author": "Sonali",
+  "devDependencies": {
+    "@babel/core": "^7.4.3",
+    "babel-loader": "^8.0.5",
+    "@babel/polyfill": "^7.4.3",
+    "@babel/preset-env": "^7.4.3",
+    "webpack": "^4.16.1",
+    "webpack-cli": "^3.0.8",
+    "webpack-dev-server": "^3.1.10"
+  }
+}

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vossle</title>
+
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      media="screen"
+      href="style/webcam-demo.css"
+    />
+    <script src="https://unpkg.com/merge-images"></script>
+    <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="./libs/webcam-easy.js"></script>
+
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <!-- <script src="./third_party/three.js/js/OBJLoader.js"></script>
+    <script src="./third_party/three.js/js/MTLLoader.js"></script> -->
+  </head>
+  <body>
+    <canvas id="c" class="d-none"></canvas>
+
+    <canvas id="myCanvas" width="1024" height="768" class="d-none"></canvas>
+    <main id="top">
+      <div>
+        <a id="webcam-switch" href="#">https://vossle.com/experience-01</a>
+      </div>
+
+      <div class="md-modal">
+        <div class="app-panel">
+          <video
+            id="webcam"
+            autoplay
+            playsinline
+            width="640"
+            height="480"
+          ></video>
+          <canvas id="canvas" class="d-none"></canvas>
+          <div class="flash"></div>
+          <audio src="audio/snap.wav" preload="auto"></audio>
+        </div>
+      </div>
+
+      <!-- <a-scene transparent="true" class="d-none" id="scene">
+        <a-sphere
+          position="-1 0.5 -3"
+          rotation="0 45 0"
+          color="tomato"
+        ></a-sphere>
+      </a-scene> -->
+
+      <div id="controls" class="cameraControls d-none">
+        <a href="#" id="exit-app" title="Exit App" class="d-none"
+          ><i class="material-icons">exit_to_app</i></a
+        >
+
+        <a href="#" id="take-photo" title="Take Photo"
+          ><i class="material-icons">camera_alt</i></a
+        >
+
+        <a
+          href="#"
+          id="download-photo"
+          download="selfie.png"
+          target="_blank"
+          title="Save Photo"
+          class="d-none"
+          ><i class="material-icons">file_download</i></a
+        >
+
+        <a href="#" id="resume-camera" title="Resume Camera" class="d-none"
+          ><i class="material-icons">camera_front</i></a
+        >
+      </div>
+
+      <div class="md-modal"></div>
+    </main>
+    <script src="./libs/three.min.js"></script>
+    <script src="./libs/GLTFLoader.js"></script>
+    <script src="./libs/OrbitControls.js"></script>
+    <script src="./scripts.js"></script>
+    <script src="./src/app.js"></script>
+  </body>
+</html>
