@@ -3,8 +3,8 @@
   width: 100vw;
 }
 .app-panel {
-  height: 100vh;
-  width: 100vw;
+  /* height: 100vh;
+  width: 100vw; */
   text-align: center;
   background-color: black;
 }
@@ -12,21 +12,21 @@
 #webcam {
   display: block;
   position: relative;
-  width: auto;
-  height: 100vh;
+  /*width: auto;
+  height: 100vh;*/
   z-index: 999;
   pointer-events: none;
-  margin: auto;
+  /* margin: auto; */
 }
 
 .md-modal {
   position: fixed;
-  margin: auto;
+  /* margin: auto; */
   z-index: 2000;
   visibility: hidden;
   top: 0;
-  left: 0;
-  right: 0;
+  /* left: 0;
+  right: 0; */
 }
 
 .md-show {
@@ -69,14 +69,14 @@
 #canvas {
   background-color: transparent;
   position: absolute;
-  width: auto;
-  height: 100vh;
-  margin: auto;
-  top: 0;
+  /* width: auto; */
+  /* height: 100vh; */
+  /* margin: auto; */
+  /* top: 0;
   left: 0;
   right: 0;
   margin-left: auto;
-  margin-right: auto;
+  margin-right: auto; */
 }
 #scene {
   z-index: 2000;
@@ -95,16 +95,22 @@ body {
   overflow: hidden;
 }
 #c {
-  margin-left: auto;
+  display: block;
+  position: relative;
+  z-index: 9999;
+}
+
+#myCanvas {
+  /* margin-left: auto;
   margin-right: auto;
   margin: auto;
   top: 0;
   right: 0;
+  left: 0; */
   display: block;
+  z-index: 99999;
   position: relative;
-  z-index: 9999;
-  width: auto;
-  height: 100vh;
+  /* transform: scale(1, 1); */
 }
 /* ----------- iPhone 4 and 4S ----------- */
 

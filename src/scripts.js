@@ -55,8 +55,8 @@ function init() {
   scene.add(light4);
 
   renderer = new THREE.WebGLRenderer({ canvas, alpha: true });
-  var width = 640;
-  var height = 480;
+  var width = window.innerWidth; //1024; //640;
+  var height = window.innerHeight; //768; //480;
   camera.aspect = width / height;
   camera.updateProjectionMatrix();
   renderer.setSize(width, height);

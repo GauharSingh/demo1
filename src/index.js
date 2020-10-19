@@ -79,16 +79,16 @@ function afterTakePhoto() {
   webcam.stop();
   $("#c").addClass("d-none");
   $("#myCanvas").removeClass("d-none");
-  $("#myCanvas").css({
-    "margin- left": "auto",
-    "margin-right": "auto",
-    margin: "auto",
-    top: 0,
-    right: 0,
-    display: "block",
-    "z-index": 99999,
-    position: "relative",
-  });
+  // $("#myCanvas").css({
+  //   "margin-left": "auto",
+  //   "margin-right": "auto",
+  //   margin: "auto",
+  //   top: 0,
+  //   right: 0,
+  //   display: "block",
+  //   "z-index": 99999,
+  //   position: "relative",
+  // });
   $("#canvas").addClass("d-none");
   $("#take-photo").addClass("d-none");
   $("#exit-app").removeClass("d-none");
