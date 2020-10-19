@@ -2,25 +2,25 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Vossle</title>
-
     <link rel="icon" href="data:;base64,iVBORw0KGgo=" />
-
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
     <link
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet"
     />
   </head>
   <body>
-    <canvas id="c" width="640" height="480" class="d-none"></canvas>
-
-    <canvas id="myCanvas" width="1024" height="768" class="d-none"></canvas>
+    <canvas id="c" class="d-none"></canvas
+    ><canvas id="myCanvas" width="1024" height="768" class="d-none"></canvas>
     <main id="top">
       <div>
         <a id="webcam-switch" href="#">https://vossle.com/experience-01</a>
       </div>
-
       <div class="md-modal">
         <div class="app-panel">
           <video
@@ -29,22 +29,19 @@
             playsinline
             width="640"
             height="480"
-          ></video>
-          <canvas id="canvas" class="d-none"></canvas>
+          ></video
+          ><canvas id="canvas" class="d-none"></canvas>
           <div class="flash"></div>
           <audio src="audio/snap.wav" preload="auto"></audio>
         </div>
       </div>
-
       <div id="controls" class="cameraControls d-none">
         <a href="#" id="exit-app" title="Exit App" class="d-none"
           ><i class="material-icons">exit_to_app</i></a
         >
-
         <a href="#" id="take-photo" title="Take Photo"
           ><i class="material-icons">camera_alt</i></a
         >
-
         <a
           href="#"
           id="download-photo"
@@ -54,13 +51,12 @@
           class="d-none"
           ><i class="material-icons">file_download</i></a
         >
-
         <a href="#" id="resume-camera" title="Resume Camera" class="d-none"
           ><i class="material-icons">camera_front</i></a
         >
       </div>
-
       <div class="md-modal"></div>
     </main>
+    <script src="app.js"></script>
   </body>
 </html>

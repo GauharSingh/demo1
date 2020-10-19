@@ -6,6 +6,14 @@ export var scene, camera, render;
 export var renderer;
 const canvas = document.querySelector("#c");
 
+window.addEventListener("resize", function () {
+  var width = window.innerWidth;
+  var height = window.innerHeight;
+  renderer.setSize(width, height);
+  camera.aspect = width / height;
+  camera.updateProjectionMatrix();
+});
+
 function init() {
   scene = new THREE.Scene();
   scene.background = new THREE.Color(0xdddddd);
@@ -47,7 +55,13 @@ function init() {
   scene.add(light4);
 
   renderer = new THREE.WebGLRenderer({ canvas, alpha: true });
-  renderer.setSize(1024, 768);
+  var width = 640;
+  var height = 480;
+  camera.aspect = width / height;
+  camera.updateProjectionMatrix();
+  renderer.setSize(width, height);
+
+  // renderer.setSize(1024, 768);
 
   let controls = new OrbitControls(camera, renderer.domElement);
   // document.body.appendChild(renderer.domElement);

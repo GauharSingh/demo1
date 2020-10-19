@@ -1,6 +1,11 @@
-import Webcam from "./webcam-easy.js";
+import Webcam from "./webcam.js";
 import $ from "jquery";
 import "./scripts";
+import "./webcam.css";
+import "bootstrap";
+import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+import "../node_modules/bootstrap/dist/js/bootstrap.min.js";
+import "../node_modules/jquery/dist/jquery.min.js";
 
 const webcamElement = document.getElementById("webcam");
 const canvasElement = document.getElementById("canvas");
