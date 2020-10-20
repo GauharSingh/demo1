@@ -249,9 +249,8 @@ class Webcam {
       a.style.display = "none";
       url = window.URL.createObjectURL(blob);
       a.href = url;
-      a.download = `screencapture-${document.getElementById("c").width}x${
-        document.getElementById("c").height
-      }.png`;
+      a.download = `screencapture-${document.getElementById("c").width}x${document.getElementById("c").height
+        }.png`;
 
       // console.log(photo);
       // url = window.URL.createObjectURL(photo);

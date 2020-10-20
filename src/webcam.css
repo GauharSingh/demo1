@@ -1,6 +1,7 @@
 html {
   height: 100%;
 }
+
 body {
   height: 100%;
   font-family: sans-serif;
@@ -9,9 +10,11 @@ body {
   margin: 0;
   padding: 0;
 }
+
 .d-none {
   display: none !important;
 }
+
 .app-panel {
   text-align: center;
   background-color: black;
@@ -21,7 +24,7 @@ body {
   display: block;
   position: relative;
   object-fit: unset;
-  /* z-index: 999; */
+  z-index: 999;
   pointer-events: none;
 }
 
@@ -47,17 +50,28 @@ body {
   padding: 10px;
 }
 
-@font-face {
+/* @font-face {
   font-family: "Material Icons";
   font-style: normal;
   font-weight: 400;
   src: url(https://fonts.gstatic.com/s/materialicons/v55/flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2)
     format("woff2");
+} */
+
+@font-face {
+  font-family: 'Material Icons';
+  src: url('./font/MaterialIcons-Regular.woff2') format('woff2'),
+      url('./font/MaterialIcons-Regular.woff') format('woff'),
+      url('./font/MaterialIcons-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
 }
+
 
 .material-icons {
   font-family: "Material Icons";
-  font-weight: normal;
+  font-weight: 400;
   font-style: normal;
   font-size: 50px !important;
   color: white;
@@ -85,6 +99,7 @@ body {
   background-color: transparent;
   position: absolute;
 }
+
 #scene {
   z-index: 2000;
   position: fixed;
@@ -99,6 +114,7 @@ body {
 }
 
 #myCanvas {
+  top:0;
   display: block;
   z-index: 99999;
   position: relative;

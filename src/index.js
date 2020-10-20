@@ -1,7 +1,4 @@
-import "./bootstrap.css";
 import "./webcam.css";
-
-// import "bootstrap/dist/css/bootstrap.min.css";
 
 import Webcam from "./webcam";
 import $ from "jquery";

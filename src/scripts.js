@@ -1,10 +1,17 @@
-import * as THREE from "three/build/three.module";
+// import * as THREE from "three/build/three.module";
+import { Scene, Color, PerspectiveCamera, AmbientLight, DirectionalLight, PointLight, WebGLRenderer } from 'three';
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
+// import GLTFLoader from 'gltf-webpack-loader';
+
+// import gltfPath from '../3d-obj-loader/assets/scene.gltf';
+// console.log("gltfPath", gltfPath);
 
 export var scene, camera, render;
 export var renderer;
 const canvas = document.querySelector("#c");
+
+var loader = new GLTFLoader().setPath( '../3d-obj-loader/assets/' );
 
 window.addEventListener("resize", function () {
   var width = window.innerWidth;
@@ -15,11 +22,11 @@ window.addEventListener("resize", function () {
 });
 
 function init() {
-  scene = new THREE.Scene();
-  scene.background = new THREE.Color(0xdddddd);
+  scene = new Scene();
+  scene.background = new Color(0xdddddd);
   scene.background = null;
 
-  camera = new THREE.PerspectiveCamera(
+  camera = new PerspectiveCamera(
     40,
     window.innerWidth / window.innerHeight,
     1,
@@ -30,31 +37,31 @@ function init() {
   camera.position.y = 100;
   camera.position.z = 1000;
 
-  let hlight = new THREE.AmbientLight(0x404040, 100);
+  let hlight = new AmbientLight(0x404040, 100);
   scene.add(hlight);
 
-  let directionalLight = new THREE.DirectionalLight(0xffffff, 100);
+  let directionalLight = new DirectionalLight(0xffffff, 100);
   directionalLight.position.set(0, 1, 0);
   directionalLight.castShadow = true;
   scene.add(directionalLight);
 
-  let light = new THREE.PointLight(0xc4c4cc4, 10);
+  let light = new PointLight(0xc4c4cc4, 10);
   light.position.set(0, 300, 500);
   scene.add(light);
 
-  let light2 = new THREE.PointLight(0xc4c4cc4, 10);
+  let light2 = new PointLight(0xc4c4cc4, 10);
   light.position.set(500, 100, 0);
   scene.add(light2);
 
-  let light3 = new THREE.PointLight(0xc4c4cc4, 10);
+  let light3 = new PointLight(0xc4c4cc4, 10);
   light.position.set(0, 100, -500);
   scene.add(light3);
 
-  let light4 = new THREE.PointLight(0xc4c4cc4, 10);
+  let light4 = new PointLight(0xc4c4cc4, 10);
   light.position.set(-5000, 300, 0);
   scene.add(light4);
 
-  renderer = new THREE.WebGLRenderer({ canvas, alpha: true });
+  renderer = new WebGLRenderer({ canvas, alpha: true });
   var width = window.innerWidth; //1024; //640;
   var height = window.innerHeight; //768; //480;
   camera.aspect = width / height;
@@ -64,9 +71,11 @@ function init() {
   let controls = new OrbitControls(camera, renderer.domElement);
   // document.body.appendChild(renderer.domElement);
 
-  let loader = new GLTFLoader();
-  loader.load("../3d-obj-loader/assets/scene.gltf", function (gltf) {
+  // let loader = new GLTFLoader();
+
+  loader.load('scene.gltf', function (gltf) {
     let car = gltf.scene.children[0];
+    console.log("init -> gltf", gltf)
     car.scale.set(0.5, 0.5, 0.5);
     scene.add(gltf.scene);
     animate();
