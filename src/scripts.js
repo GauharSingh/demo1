@@ -61,8 +61,6 @@ function init() {
   camera.updateProjectionMatrix();
   renderer.setSize(width, height);
 
-  // renderer.setSize(1024, 768);
-
   let controls = new OrbitControls(camera, renderer.domElement);
   // document.body.appendChild(renderer.domElement);
 

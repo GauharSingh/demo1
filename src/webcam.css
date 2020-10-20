@@ -1,10 +1,18 @@
-#background-container {
-  height: 100vh;
-  width: 100vw;
+html {
+  height: 100%;
+}
+body {
+  height: 100%;
+  font-family: sans-serif;
+  line-height: 24px;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+.d-none {
+  display: none !important;
 }
 .app-panel {
-  /* height: 100vh;
-  width: 100vw; */
   text-align: center;
   background-color: black;
 }
@@ -12,21 +20,16 @@
 #webcam {
   display: block;
   position: relative;
-  /*width: auto;
-  height: 100vh;*/
-  z-index: 999;
+  object-fit: unset;
+  /* z-index: 999; */
   pointer-events: none;
-  /* margin: auto; */
 }
 
 .md-modal {
   position: fixed;
-  /* margin: auto; */
   z-index: 2000;
   visibility: hidden;
   top: 0;
-  /* left: 0;
-  right: 0; */
 }
 
 .md-show {
@@ -44,16 +47,28 @@
   padding: 10px;
 }
 
+@font-face {
+  font-family: "Material Icons";
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/materialicons/v55/flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2)
+    format("woff2");
+}
+
 .material-icons {
-  width: 100px;
+  font-family: "Material Icons";
+  font-weight: normal;
+  font-style: normal;
   font-size: 50px !important;
   color: white;
   width: 80px;
-  height: 80px;
+  height: 65px;
   background-color: black;
-  border-radius: 50%;
+  border-radius: 83%;
   padding-top: 15px;
   margin: 0 10px;
+  line-height: 1;
+  display: inline-block;
 }
 
 .flash {
@@ -69,14 +84,6 @@
 #canvas {
   background-color: transparent;
   position: absolute;
-  /* width: auto; */
-  /* height: 100vh; */
-  /* margin: auto; */
-  /* top: 0;
-  left: 0;
-  right: 0;
-  margin-left: auto;
-  margin-right: auto; */
 }
 #scene {
   z-index: 2000;
@@ -85,15 +92,6 @@
   height: 200px;
 }
 
-html {
-  height: 100%;
-}
-body {
-  height: 100%;
-  font-family: sans-serif;
-  line-height: 24px;
-  overflow: hidden;
-}
 #c {
   display: block;
   position: relative;
@@ -101,22 +99,7 @@ body {
 }
 
 #myCanvas {
-  /* margin-left: auto;
-  margin-right: auto;
-  margin: auto;
-  top: 0;
-  right: 0;
-  left: 0; */
   display: block;
   z-index: 99999;
   position: relative;
-  /* transform: scale(1, 1); */
 }
-/* ----------- iPhone 4 and 4S ----------- */
-
-/* @media only screen and (min-device-width: 300px) {
-  #myCanvas {
-    width: 300px;
-    height: 700px;
-  }
-} */
