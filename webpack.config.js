@@ -11,6 +11,11 @@ module.exports = {
     path: path.resolve(__dirname, "dist"),
     filename: "index.js",
   },
+  resolve: {
+    alias: {
+      'three.module.js': path.join(__dirname, 'node_modules/three/build/three.module.js')
+    }
+  },
   module: {
     rules: [
       // {

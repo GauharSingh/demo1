@@ -1,5 +1,12 @@
 // import * as THREE from "three/build/three.module";
-import { Scene, Color, PerspectiveCamera, AmbientLight, DirectionalLight, PointLight, WebGLRenderer } from 'three';
+import { Scene, Color, PerspectiveCamera, AmbientLight, DirectionalLight, PointLight, WebGLRenderer } from 'three.module.js';
+// import Scene from 'three/Scene';
+// import Color from 'three/Color';
+// import PerspectiveCamera from 'three/PerspectiveCamera';
+// import AmbientLight from 'three/AmbientLight';
+// import DirectionalLight from 'three/DirectionalLight';
+// import WebGLRenderer from 'three/WebGLRenderer';
+// import PointLight from 'three/PointLight';
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 // import GLTFLoader from 'gltf-webpack-loader';
@@ -11,7 +18,7 @@ export var scene, camera, render;
 export var renderer;
 const canvas = document.querySelector("#c");
 
-var loader = new GLTFLoader().setPath( '../3d-obj-loader/assets/' );
+var loader = new GLTFLoader().setPath('../3d-obj-loader/assets/');
 
 window.addEventListener("resize", function () {
   var width = window.innerWidth;

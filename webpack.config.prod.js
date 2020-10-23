@@ -2,6 +2,8 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+// const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 module.exports = {
   mode: "development",
@@ -11,6 +13,11 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "index.js",
+  },
+  resolve: {
+    alias: {
+      'three.module.js': path.join(__dirname, 'node_modules/three/build/three.module.js')
+    }
   },
   module: {
     rules: [
@@ -35,7 +42,14 @@ module.exports = {
       // },
       {
         test: /\.(png|woff|woff2|eot|ttf|svg)$/,
-        loader: 'url-loader?limit=100000'
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              limit: 10000, // if less than 10 kb, add base64 encoded image to css
+              name: "font/[name].[ext]" // if more than 10 kb move to this folder in build using file-loader
+            }
+          }]
       },
       {
         test: /\.js?$/,
@@ -89,7 +103,15 @@ module.exports = {
       {
         filename: '[name].css'
       }
-    )
+    ),
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: '3d-obj-loader/**/*'
+        }
+      ]
+    }),
+    // new BundleAnalyzerPlugin()
   ],
   optimization: {
     minimize: true,

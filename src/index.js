@@ -1,4 +1,4 @@
-import "./webcam.css";
+import "./css/webcam.css";
 
 import Webcam from "./webcam";
 import $ from "jquery";

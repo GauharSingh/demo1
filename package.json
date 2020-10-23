@@ -34,8 +34,10 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.12.1",
+    "copy-webpack-plugin": "^6.2.1",
     "core-js": "^3.6.5",
     "fs": "0.0.1-security",
-    "gltf-webpack-loader": "1.0.5"
+    "gltf-webpack-loader": "1.0.5",
+    "webpack-bundle-analyzer": "^3.9.0"
   }
 }
